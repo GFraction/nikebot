@@ -13,18 +13,19 @@ namespace nikebot
 {
     public partial class FormMainMenu : Form
     {
+        #region VAR INIT
+        public Form1 obj = new Form1();
 
+        #endregion
         //Constructor
         public FormMainMenu()
         {
             InitializeComponent();
-            
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -36,6 +37,24 @@ namespace nikebot
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void TasksBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form1());
+        }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }   
         //Structs
 
     }

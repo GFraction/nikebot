@@ -33,11 +33,11 @@
             this.ProxyBtn = new FontAwesome.Sharp.IconButton();
             this.SettingsBtn = new FontAwesome.Sharp.IconButton();
             this.TasksBtn = new FontAwesome.Sharp.IconButton();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.CloseBtn = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelChildForm.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(163, 450);
+            this.panel1.Size = new System.Drawing.Size(163, 553);
             this.panel1.TabIndex = 0;
             // 
             // iconButton1
@@ -60,17 +60,17 @@
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("HelvLight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 135);
+            this.iconButton1.Location = new System.Drawing.Point(0, 414);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(163, 45);
+            this.iconButton1.Size = new System.Drawing.Size(163, 138);
             this.iconButton1.TabIndex = 5;
             this.iconButton1.Text = "Profiles";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -83,17 +83,17 @@
             this.ProxyBtn.FlatAppearance.BorderSize = 0;
             this.ProxyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProxyBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.ProxyBtn.Font = new System.Drawing.Font("HelvLight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProxyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProxyBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.ProxyBtn.IconChar = FontAwesome.Sharp.IconChar.Server;
             this.ProxyBtn.IconColor = System.Drawing.Color.Gainsboro;
             this.ProxyBtn.IconSize = 25;
             this.ProxyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ProxyBtn.Location = new System.Drawing.Point(0, 90);
+            this.ProxyBtn.Location = new System.Drawing.Point(0, 276);
             this.ProxyBtn.Name = "ProxyBtn";
             this.ProxyBtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.ProxyBtn.Rotation = 0D;
-            this.ProxyBtn.Size = new System.Drawing.Size(163, 45);
+            this.ProxyBtn.Size = new System.Drawing.Size(163, 138);
             this.ProxyBtn.TabIndex = 4;
             this.ProxyBtn.Text = "Proxy";
             this.ProxyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,17 +106,17 @@
             this.SettingsBtn.FlatAppearance.BorderSize = 0;
             this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.SettingsBtn.Font = new System.Drawing.Font("HelvLight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SettingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingsBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.SettingsBtn.IconChar = FontAwesome.Sharp.IconChar.Cog;
             this.SettingsBtn.IconColor = System.Drawing.Color.Gainsboro;
             this.SettingsBtn.IconSize = 25;
             this.SettingsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingsBtn.Location = new System.Drawing.Point(0, 45);
+            this.SettingsBtn.Location = new System.Drawing.Point(0, 138);
             this.SettingsBtn.Name = "SettingsBtn";
             this.SettingsBtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.SettingsBtn.Rotation = 0D;
-            this.SettingsBtn.Size = new System.Drawing.Size(163, 45);
+            this.SettingsBtn.Size = new System.Drawing.Size(163, 138);
             this.SettingsBtn.TabIndex = 3;
             this.SettingsBtn.Text = "Settings";
             this.SettingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +129,7 @@
             this.TasksBtn.FlatAppearance.BorderSize = 0;
             this.TasksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TasksBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.TasksBtn.Font = new System.Drawing.Font("HelvLight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TasksBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TasksBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.TasksBtn.IconChar = FontAwesome.Sharp.IconChar.Tasks;
             this.TasksBtn.IconColor = System.Drawing.Color.Gainsboro;
@@ -139,23 +139,24 @@
             this.TasksBtn.Name = "TasksBtn";
             this.TasksBtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.TasksBtn.Rotation = 0D;
-            this.TasksBtn.Size = new System.Drawing.Size(163, 45);
+            this.TasksBtn.Size = new System.Drawing.Size(163, 138);
             this.TasksBtn.TabIndex = 1;
             this.TasksBtn.Text = "Tasks";
             this.TasksBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TasksBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.TasksBtn.UseVisualStyleBackColor = true;
+            this.TasksBtn.Click += new System.EventHandler(this.TasksBtn_Click);
             // 
-            // panel2
+            // panelChildForm
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(163, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(637, 450);
-            this.panel2.TabIndex = 1;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.panelChildForm.Controls.Add(this.panel3);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(163, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(864, 553);
+            this.panelChildForm.TabIndex = 1;
+            this.panelChildForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panel3
             // 
@@ -164,7 +165,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(637, 39);
+            this.panel3.Size = new System.Drawing.Size(864, 39);
             this.panel3.TabIndex = 0;
             // 
             // CloseBtn
@@ -177,7 +178,7 @@
             this.CloseBtn.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.CloseBtn.IconColor = System.Drawing.Color.Gainsboro;
             this.CloseBtn.IconSize = 16;
-            this.CloseBtn.Location = new System.Drawing.Point(601, 0);
+            this.CloseBtn.Location = new System.Drawing.Point(828, 0);
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.Rotation = 0D;
             this.CloseBtn.Size = new System.Drawing.Size(36, 39);
@@ -190,14 +191,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1027, 553);
+            this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMainMenu";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelChildForm.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -210,7 +211,7 @@
         private FontAwesome.Sharp.IconButton SettingsBtn;
         private FontAwesome.Sharp.IconButton ProxyBtn;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton CloseBtn;
     }
