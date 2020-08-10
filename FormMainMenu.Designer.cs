@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.ProfilesBtn = new FontAwesome.Sharp.IconButton();
             this.ProxyBtn = new FontAwesome.Sharp.IconButton();
             this.SettingsBtn = new FontAwesome.Sharp.IconButton();
             this.TasksBtn = new FontAwesome.Sharp.IconButton();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.HoldPanel = new System.Windows.Forms.Panel();
             this.CloseBtn = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelChildForm.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.HoldPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.ProfilesBtn);
             this.panel1.Controls.Add(this.ProxyBtn);
             this.panel1.Controls.Add(this.SettingsBtn);
             this.panel1.Controls.Add(this.TasksBtn);
@@ -54,28 +54,29 @@
             this.panel1.Size = new System.Drawing.Size(163, 553);
             this.panel1.TabIndex = 0;
             // 
-            // iconButton1
+            // ProfilesBtn
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 414);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(163, 138);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "Profiles";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.ProfilesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProfilesBtn.FlatAppearance.BorderSize = 0;
+            this.ProfilesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProfilesBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.ProfilesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfilesBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ProfilesBtn.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.ProfilesBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.ProfilesBtn.IconSize = 25;
+            this.ProfilesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProfilesBtn.Location = new System.Drawing.Point(0, 414);
+            this.ProfilesBtn.Name = "ProfilesBtn";
+            this.ProfilesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ProfilesBtn.Rotation = 0D;
+            this.ProfilesBtn.Size = new System.Drawing.Size(163, 138);
+            this.ProfilesBtn.TabIndex = 5;
+            this.ProfilesBtn.Text = "Profiles";
+            this.ProfilesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProfilesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ProfilesBtn.UseVisualStyleBackColor = true;
+            this.ProfilesBtn.Click += new System.EventHandler(this.ProfilesBtn_Click);
             // 
             // ProxyBtn
             // 
@@ -150,7 +151,7 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.panelChildForm.Controls.Add(this.panel3);
+            this.panelChildForm.Controls.Add(this.HoldPanel);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(163, 0);
             this.panelChildForm.Name = "panelChildForm";
@@ -158,15 +159,16 @@
             this.panelChildForm.TabIndex = 1;
             this.panelChildForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
-            // panel3
+            // HoldPanel
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.panel3.Controls.Add(this.CloseBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(864, 39);
-            this.panel3.TabIndex = 0;
+            this.HoldPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.HoldPanel.Controls.Add(this.CloseBtn);
+            this.HoldPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HoldPanel.Location = new System.Drawing.Point(0, 0);
+            this.HoldPanel.Name = "HoldPanel";
+            this.HoldPanel.Size = new System.Drawing.Size(864, 39);
+            this.HoldPanel.TabIndex = 0;
+            this.HoldPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HoldPanel_MouseDown);
             // 
             // CloseBtn
             // 
@@ -199,7 +201,7 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.HoldPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -210,9 +212,9 @@
         private FontAwesome.Sharp.IconButton TasksBtn;
         private FontAwesome.Sharp.IconButton SettingsBtn;
         private FontAwesome.Sharp.IconButton ProxyBtn;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton ProfilesBtn;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel HoldPanel;
         private FontAwesome.Sharp.IconButton CloseBtn;
     }
 }

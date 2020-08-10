@@ -25,6 +25,11 @@ namespace nikebot
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
+            if(activeForm != null)
+            {
+                activeForm.Close();
+
+            }
             this.Close();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -54,7 +59,18 @@ namespace nikebot
             panelChildForm.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
-        }   
+        }
+
+        private void ProfilesBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProfilesListForm());
+        }
+       
+        private void HoldPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         //Structs
 
     }
