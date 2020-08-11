@@ -63,7 +63,7 @@ namespace nikebot
 
         private void AddNewProfileBtn_Click(object sender, EventArgs e)
         {
-            AddingProfileForm addingProfileForm = new AddingProfileForm(sqlConnection);
+            AddingProfileForm addingProfileForm = new AddingProfileForm(sqlConnection, listBox1);
            
             addingProfileForm.Show();
             

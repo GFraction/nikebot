@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.AddNewProfileBtn = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
@@ -36,12 +36,17 @@
             // 
             // listBox1
             // 
-            listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new System.Drawing.Point(3, 53);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new System.Drawing.Size(794, 394);
-            listBox1.TabIndex = 0;
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.Font = new System.Drawing.Font("HelvLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 53);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(794, 394);
+            this.listBox1.TabIndex = 0;
             // 
             // AddNewProfileBtn
             // 
@@ -68,8 +73,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(listBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.AddNewProfileBtn, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -85,6 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProfilesListForm";
             this.Text = "ProfilesListForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfilesListForm_FormClosing);
@@ -95,9 +101,8 @@
         }
 
         #endregion
-
-        public static System.Windows.Forms.ListBox listBox1;
         private FontAwesome.Sharp.IconButton AddNewProfileBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

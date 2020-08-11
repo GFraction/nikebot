@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,9 +14,10 @@ namespace nikebot
     public partial class AddingProfileForm : Form
     {
         SqlConnection sqlConnection;
-
-        public AddingProfileForm(SqlConnection sqlConnection)
+        ListBox listBox;
+        public AddingProfileForm(SqlConnection sqlConnection, ListBox listBox)
         {
+            this.listBox = listBox;
             this.sqlConnection = sqlConnection;
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace nikebot
 
         private async void AddingProfileForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ProfilesListForm.listBox1.Items.Clear();
+            listBox.Items.Clear();
             SqlDataReader sqlDataReader = null;
             SqlCommand command = new SqlCommand("SELECT * FROM [ProfileTable]", sqlConnection);
             try
@@ -46,7 +46,7 @@ namespace nikebot
                 sqlDataReader = await command.ExecuteReaderAsync();
                 while (await sqlDataReader.ReadAsync())
                 {
-                    ProfilesListForm.listBox1.Items.Add(Convert.ToString(sqlDataReader["Id"]) + " " + Convert.ToString(sqlDataReader["Name"]));
+                    listBox.Items.Add(Convert.ToString(sqlDataReader["Id"]) + " " + Convert.ToString(sqlDataReader["Name"]));
                 }
             }
             catch (Exception ex)
@@ -61,5 +61,7 @@ namespace nikebot
                 }
             }
         }
+
+      
     }
 }
