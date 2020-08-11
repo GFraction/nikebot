@@ -1,71 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace nikebot
 {
     public partial class ProfilesListForm : Form
     {
-        SqlConnection sqlConnection;
+        ModelContext db;
         public ProfilesListForm()
         {
             InitializeComponent();
-        }
-        
+            db = new ModelContext();
+            db.ProfList.Load();
+            dataGridView1.DataSource = db.ProfList.Local.ToBindingList();
 
-        private async void ProfilesListForm_Load(object sender, EventArgs e)
-        {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Михаил\source\repos\nikebot\Database.mdf;Integrated Security=True";
-            sqlConnection = new SqlConnection(connectionString);
-
-            await sqlConnection.OpenAsync();
-            ProfileList_Update();
         }
-        private async void ProfileList_Update()
-        {
-            listBox1.Items.Clear();
-            SqlDataReader sqlDataReader = null;
-            SqlCommand command = new SqlCommand("SELECT * FROM [ProfileTable]", sqlConnection);
-            try
-            {
-                sqlDataReader = await command.ExecuteReaderAsync();
-                while (await sqlDataReader.ReadAsync())
-                {
-                    listBox1.Items.Add(Convert.ToString(sqlDataReader["Id"]) + " " + Convert.ToString(sqlDataReader["Name"]));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlDataReader != null)
-                {
-                    sqlDataReader.Close();
-                }
-            }
-        }
-        private void ProfilesListForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if(sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
-            {
-                sqlConnection.Close();
-            }
-        }
-
         private void AddNewProfileBtn_Click(object sender, EventArgs e)
         {
-            AddingProfileForm addingProfileForm = new AddingProfileForm(sqlConnection, listBox1);
+            AddingProfileForm addingProfileForm = new AddingProfileForm();
            
-            addingProfileForm.Show();
+            DialogResult result = addingProfileForm.ShowDialog(this);
+            if (result == DialogResult.Cancel) return;
+            Profile prof = new Profile()
+            {
+                Name = addingProfileForm.NameInput.Text,
+                Surname = addingProfileForm.SurnameInput.Text,
+                Patronymic = addingProfileForm.PatronymicInput.Text,
+                Phone = addingProfileForm.PhoneInput.Text,
+                CVV = addingProfileForm.CVVInput.Text,
+                City = addingProfileForm.CityInput.Text,
+                Street = addingProfileForm.StreetInput.Text,
+                Apt = addingProfileForm.AptInput.Text,
+                CreditCard  = addingProfileForm.CreditCardInput.Text,
+                Email = addingProfileForm.EmailInput.Text
+            };
+            db.ProfList.Add(prof);
+            db.SaveChanges();
             
         }
     }

@@ -35,24 +35,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.NameInput = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PatronymicInput = new System.Windows.Forms.TextBox();
+            this.PhoneInput = new System.Windows.Forms.TextBox();
+            this.SurnameInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CityInput = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.StreetInput = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.AptInput = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.EmailInput = new System.Windows.Forms.TextBox();
+            this.CreditCardInput = new System.Windows.Forms.TextBox();
+            this.CVVInput = new System.Windows.Forms.TextBox();
+            this.HoldPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -61,16 +62,16 @@
             // SaveBtn
             // 
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.SaveBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.SaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.SaveBtn.Location = new System.Drawing.Point(393, 400);
+            this.SaveBtn.Location = new System.Drawing.Point(393, 369);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(404, 47);
+            this.SaveBtn.Size = new System.Drawing.Size(404, 42);
             this.SaveBtn.TabIndex = 0;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -82,29 +83,29 @@
             this.tableLayoutPanel1.Controls.Add(this.CancelBtn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 36);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.44444F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.55556F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 414);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.CancelBtn.Location = new System.Drawing.Point(3, 400);
+            this.CancelBtn.Location = new System.Drawing.Point(3, 369);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(384, 47);
+            this.CancelBtn.Size = new System.Drawing.Size(384, 42);
             this.CancelBtn.TabIndex = 1;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -114,13 +115,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.NameInput, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox4, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.PatronymicInput, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.PhoneInput, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.SurnameInput, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.NameLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.CityInput, 1, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -130,7 +131,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(384, 391);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(384, 360);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // label4
@@ -165,35 +166,35 @@
             this.NameInput.Size = new System.Drawing.Size(192, 20);
             this.NameInput.TabIndex = 0;
             // 
-            // textBox2
+            // PatronymicInput
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox2.Location = new System.Drawing.Point(98, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 3;
+            this.PatronymicInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.PatronymicInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PatronymicInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.PatronymicInput.Location = new System.Drawing.Point(98, 55);
+            this.PatronymicInput.Name = "PatronymicInput";
+            this.PatronymicInput.Size = new System.Drawing.Size(192, 20);
+            this.PatronymicInput.TabIndex = 3;
             // 
-            // textBox3
+            // PhoneInput
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox3.Location = new System.Drawing.Point(98, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 20);
-            this.textBox3.TabIndex = 5;
+            this.PhoneInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.PhoneInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PhoneInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.PhoneInput.Location = new System.Drawing.Point(98, 81);
+            this.PhoneInput.Name = "PhoneInput";
+            this.PhoneInput.Size = new System.Drawing.Size(192, 20);
+            this.PhoneInput.TabIndex = 5;
             // 
-            // textBox4
+            // SurnameInput
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox4.Location = new System.Drawing.Point(98, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 20);
-            this.textBox4.TabIndex = 6;
+            this.SurnameInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.SurnameInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SurnameInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SurnameInput.Location = new System.Drawing.Point(98, 29);
+            this.SurnameInput.Name = "SurnameInput";
+            this.SurnameInput.Size = new System.Drawing.Size(192, 20);
+            this.SurnameInput.TabIndex = 6;
             // 
             // label2
             // 
@@ -228,15 +229,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Patronymic";
             // 
-            // textBox1
+            // CityInput
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(98, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 11;
+            this.CityInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.CityInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CityInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CityInput.Location = new System.Drawing.Point(98, 107);
+            this.CityInput.Name = "CityInput";
+            this.CityInput.Size = new System.Drawing.Size(192, 20);
+            this.CityInput.TabIndex = 11;
             // 
             // tableLayoutPanel3
             // 
@@ -244,15 +245,15 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox5, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.StreetInput, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox6, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.AptInput, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label8, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label9, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.textBox8, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBox9, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.EmailInput, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.CreditCardInput, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.CVVInput, 1, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(393, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -263,7 +264,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(404, 391);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(404, 360);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // label5
@@ -277,15 +278,15 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Street";
             // 
-            // textBox5
+            // StreetInput
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox5.Location = new System.Drawing.Point(102, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(192, 20);
-            this.textBox5.TabIndex = 3;
+            this.StreetInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.StreetInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.StreetInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.StreetInput.Location = new System.Drawing.Point(102, 3);
+            this.StreetInput.Name = "StreetInput";
+            this.StreetInput.Size = new System.Drawing.Size(192, 20);
+            this.StreetInput.TabIndex = 3;
             // 
             // label6
             // 
@@ -298,22 +299,22 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Apt";
             // 
-            // textBox6
+            // AptInput
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox6.Location = new System.Drawing.Point(102, 29);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(192, 20);
-            this.textBox6.TabIndex = 5;
+            this.AptInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.AptInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AptInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.AptInput.Location = new System.Drawing.Point(102, 29);
+            this.AptInput.Name = "AptInput";
+            this.AptInput.Size = new System.Drawing.Size(192, 20);
+            this.AptInput.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("HelvLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(3, 45);
+            this.label7.Location = new System.Drawing.Point(3, 52);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 19);
             this.label7.TabIndex = 6;
@@ -324,7 +325,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("HelvLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label8.Location = new System.Drawing.Point(3, 71);
+            this.label8.Location = new System.Drawing.Point(3, 78);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 19);
             this.label8.TabIndex = 7;
@@ -335,52 +336,62 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("HelvLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label9.Location = new System.Drawing.Point(3, 97);
+            this.label9.Location = new System.Drawing.Point(3, 104);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 19);
             this.label9.TabIndex = 8;
             this.label9.Text = "CVV";
             // 
-            // textBox7
+            // EmailInput
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox7.Location = new System.Drawing.Point(102, 48);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(192, 20);
-            this.textBox7.TabIndex = 9;
+            this.EmailInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.EmailInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.EmailInput.Location = new System.Drawing.Point(102, 55);
+            this.EmailInput.Name = "EmailInput";
+            this.EmailInput.Size = new System.Drawing.Size(192, 20);
+            this.EmailInput.TabIndex = 9;
             // 
-            // textBox8
+            // CreditCardInput
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox8.Location = new System.Drawing.Point(102, 74);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(192, 20);
-            this.textBox8.TabIndex = 10;
+            this.CreditCardInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.CreditCardInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CreditCardInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CreditCardInput.Location = new System.Drawing.Point(102, 81);
+            this.CreditCardInput.Name = "CreditCardInput";
+            this.CreditCardInput.Size = new System.Drawing.Size(192, 20);
+            this.CreditCardInput.TabIndex = 10;
             // 
-            // textBox9
+            // CVVInput
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox9.Location = new System.Drawing.Point(102, 100);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(192, 20);
-            this.textBox9.TabIndex = 11;
+            this.CVVInput.BackColor = System.Drawing.Color.Gainsboro;
+            this.CVVInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CVVInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CVVInput.Location = new System.Drawing.Point(102, 107);
+            this.CVVInput.Name = "CVVInput";
+            this.CVVInput.Size = new System.Drawing.Size(192, 20);
+            this.CVVInput.TabIndex = 11;
+            // 
+            // HoldPanel
+            // 
+            this.HoldPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.HoldPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HoldPanel.Location = new System.Drawing.Point(0, 0);
+            this.HoldPanel.Name = "HoldPanel";
+            this.HoldPanel.Size = new System.Drawing.Size(800, 36);
+            this.HoldPanel.TabIndex = 2;
+            this.HoldPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HoldPanel_MouseDown);
             // 
             // AddingProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HoldPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddingProfileForm";
             this.Text = "AddingProfileForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddingProfileForm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -396,26 +407,27 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox NameInput;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        protected internal System.Windows.Forms.TextBox NameInput;
+        protected internal System.Windows.Forms.TextBox PatronymicInput;
+        protected internal System.Windows.Forms.TextBox PhoneInput;
+        protected internal System.Windows.Forms.TextBox SurnameInput;
+        protected internal System.Windows.Forms.TextBox CityInput;
+        protected internal System.Windows.Forms.TextBox StreetInput;
+        protected internal System.Windows.Forms.TextBox AptInput;
+        protected internal System.Windows.Forms.TextBox EmailInput;
+        protected internal System.Windows.Forms.TextBox CreditCardInput;
+        protected internal System.Windows.Forms.TextBox CVVInput;
+        private System.Windows.Forms.Panel HoldPanel;
     }
 }

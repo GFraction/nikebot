@@ -1,67 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace nikebot
 {
     public partial class AddingProfileForm : Form
     {
-        SqlConnection sqlConnection;
-        ListBox listBox;
-        public AddingProfileForm(SqlConnection sqlConnection, ListBox listBox)
+       
+
+        public AddingProfileForm()
         {
-            this.listBox = listBox;
-            this.sqlConnection = sqlConnection;
             InitializeComponent();
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void CancelBtn_Click(object sender, EventArgs e)
+        private void HoldPanel_MouseDown(object sender, MouseEventArgs e)
         {
-            this.Close();
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private async void SaveBtn_Click(object sender, EventArgs e)
-        {
-            SqlCommand command = new SqlCommand("INSERT INTO [ProfileTable] (Name)VALUES(@Name)", sqlConnection);
-            command.Parameters.AddWithValue("Name", NameInput.Text);
-            await command.ExecuteNonQueryAsync();
-            this.Close();
-            
-        }
-
-        private async void AddingProfileForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            listBox.Items.Clear();
-            SqlDataReader sqlDataReader = null;
-            SqlCommand command = new SqlCommand("SELECT * FROM [ProfileTable]", sqlConnection);
-            try
-            {
-                sqlDataReader = await command.ExecuteReaderAsync();
-                while (await sqlDataReader.ReadAsync())
-                {
-                    listBox.Items.Add(Convert.ToString(sqlDataReader["Id"]) + " " + Convert.ToString(sqlDataReader["Name"]));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlDataReader != null)
-                {
-                    sqlDataReader.Close();
-                }
-            }
-        }
-
-      
+        
     }
 }
