@@ -79,45 +79,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddingProfileForm.cs">
+    <Compile Include="Forms\AddingProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddingProfileForm.Designer.cs">
+    <Compile Include="Forms\AddingProfileForm.Designer.cs">
       <DependentUpon>AddingProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\AddingTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\AddingTaskForm.Designer.cs">
+      <DependentUpon>AddingTaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMainMenu.cs">
+    <Compile Include="Forms\TasksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainMenu.Designer.cs">
+    <Compile Include="Forms\TasksForm.Designer.cs">
+      <DependentUpon>TasksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelContext.cs" />
     <Compile Include="Profile.cs" />
-    <Compile Include="ProfilesListForm.cs">
+    <Compile Include="Forms\ProfilesListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfilesListForm.Designer.cs">
+    <Compile Include="Forms\ProfilesListForm.Designer.cs">
       <DependentUpon>ProfilesListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddingProfileForm.resx">
+    <Compile Include="Forms\ProxyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProxyForm.Designer.cs">
+      <DependentUpon>ProxyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaskListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TaskListItem.Designer.cs">
+      <DependentUpon>TaskListItem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AddingProfileForm.resx">
       <DependentUpon>AddingProfileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddingTaskForm.resx">
+      <DependentUpon>AddingTaskForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMainMenu.resx">
+    <EmbeddedResource Include="Forms\TasksForm.resx">
+      <DependentUpon>TasksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfilesListForm.resx">
+    <EmbeddedResource Include="Forms\ProfilesListForm.resx">
       <DependentUpon>ProfilesListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,6 +150,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ProxyForm.resx">
+      <DependentUpon>ProxyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TaskListItem.resx">
+      <DependentUpon>TaskListItem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Profile.datasource" />
     <None Include="Properties\Settings.settings">

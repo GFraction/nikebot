@@ -100,6 +100,7 @@
             this.ProxyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProxyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ProxyBtn.UseVisualStyleBackColor = true;
+            this.ProxyBtn.Click += new System.EventHandler(this.ProxyBtn_Click);
             // 
             // SettingsBtn
             // 
@@ -157,7 +158,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(864, 553);
             this.panelChildForm.TabIndex = 1;
-            this.panelChildForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // HoldPanel
             // 

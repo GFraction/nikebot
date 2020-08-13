@@ -10,10 +10,6 @@ namespace nikebot
         public ProfilesListForm()
         {
             InitializeComponent();
-            db = new ModelContext();
-            db.ProfList.Load();
-            dataGridView1.DataSource = db.ProfList.Local.ToBindingList();
-
         }
         private void AddNewProfileBtn_Click(object sender, EventArgs e)
         {
@@ -38,5 +34,13 @@ namespace nikebot
             db.SaveChanges();
             
         }
+        private async void ProfilesListForm_Load(object sender, EventArgs e)
+
+        {
+            db = new ModelContext();
+            await db.ProfList.LoadAsync();
+            dataGridView1.DataSource = db.ProfList.Local.ToBindingList();
+        }
+
     }
 }

@@ -49,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBindingSource)).BeginInit();
             this.SuspendLayout();
+            this.Load += new System.EventHandler(this.ProfilesListForm_Load);
             // 
             // AddNewProfileBtn
             // 
