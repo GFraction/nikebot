@@ -16,6 +16,7 @@ namespace nikebot.Forms
         public AddingTaskForm()
         {
             InitializeComponent();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -32,6 +33,29 @@ namespace nikebot.Forms
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void AddingTaskForm_Load(object sender, EventArgs e)
+        {
+            
+            foreach(var profile in DataContext.profiles)
+            {
+                comboBox1.Items.Add(profile.Name);
+            }
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            bool res = Uri.IsWellFormedUriString(textBox1.Text, UriKind.Absolute);
+            if (res)
+            {
+                iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Check;
+            }
+            else
+            {
+                iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Times;
+            }
         }
     }
 }

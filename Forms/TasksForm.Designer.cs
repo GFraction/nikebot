@@ -33,6 +33,7 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.AddTaskBtn = new FontAwesome.Sharp.IconButton();
             this.TasksLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -42,16 +43,17 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.TasksLayoutPanel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.StatusLabel, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.05442F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.94558F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 588);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.367682F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.63232F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -63,7 +65,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(769, 58);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 34);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // iconButton1
@@ -79,7 +81,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconSize = 16;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(648, 3);
+            this.iconButton1.Location = new System.Drawing.Point(673, 3);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(118, 25);
@@ -101,7 +103,7 @@
             this.AddTaskBtn.IconColor = System.Drawing.Color.Gainsboro;
             this.AddTaskBtn.IconSize = 16;
             this.AddTaskBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddTaskBtn.Location = new System.Drawing.Point(524, 3);
+            this.AddTaskBtn.Location = new System.Drawing.Point(549, 3);
             this.AddTaskBtn.Name = "AddTaskBtn";
             this.AddTaskBtn.Rotation = 0D;
             this.AddTaskBtn.Size = new System.Drawing.Size(118, 25);
@@ -114,21 +116,37 @@
             // 
             // TasksLayoutPanel
             // 
+            this.TasksLayoutPanel.AutoScroll = true;
             this.TasksLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TasksLayoutPanel.Location = new System.Drawing.Point(3, 67);
+            this.TasksLayoutPanel.Location = new System.Drawing.Point(3, 43);
             this.TasksLayoutPanel.Name = "TasksLayoutPanel";
-            this.TasksLayoutPanel.Size = new System.Drawing.Size(769, 518);
+            this.TasksLayoutPanel.Size = new System.Drawing.Size(794, 381);
             this.TasksLayoutPanel.TabIndex = 1;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(24)))), ((int)(((byte)(28)))));
+            this.StatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatusLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.StatusLabel.Location = new System.Drawing.Point(3, 427);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(794, 23);
+            this.StatusLabel.TabIndex = 2;
+            this.StatusLabel.Text = "...";
             // 
             // TasksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 588);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TasksForm";
             this.Text = "TasksForm";
+            this.Load += new System.EventHandler(this.TasksForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -141,5 +159,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton AddTaskBtn;
         private System.Windows.Forms.FlowLayoutPanel TasksLayoutPanel;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }

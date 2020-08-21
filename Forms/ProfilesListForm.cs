@@ -10,12 +10,9 @@ namespace nikebot
     public partial class ProfilesListForm : Form
     {
         
-        private List<Profile> profiles;
-        private XmlSerializer formatter = new XmlSerializer(typeof(List<Profile>));
         public ProfilesListForm()
         {
             InitializeComponent();
-
         }
         private void AddNewProfileBtn_Click(object sender, EventArgs e)
         {
@@ -41,11 +38,11 @@ namespace nikebot
                 CreditCard  = addingProfileForm.CreditCardInput.Text,
                 Email = addingProfileForm.EmailInput.Text
             };
-            profiles.Add(prof);
+            DataContext.profiles.Add(prof);
            
                 using (FileStream fs = new FileStream("profiles.xml", FileMode.OpenOrCreate))
                 {
-                    formatter.Serialize(fs, profiles);
+                    DataContext.formatter.Serialize(fs, DataContext.profiles);
 
                     StatusLabel.Text = "Профиль сохранен!";
                 }
@@ -55,23 +52,13 @@ namespace nikebot
         private void ProfilesListForm_Load(object sender, EventArgs e)
 
         {
-            profiles = new List<Profile>();
-
-            using (FileStream fs = new FileStream("profiles.xml", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("profiles.xml", FileMode.Open))
             {
-                try
+                
+                foreach (var profile in DataContext.profiles)
                 {
-                    profiles = (List<Profile>)formatter.Deserialize(fs);
-
-                    foreach (var profile in profiles)
-                    {
-                        ProfileListItem item = new ProfileListItem(profile, this);
-                        flowLayoutPanel1.Controls.Add(item);
-                    }
-                }
-                catch
-                {
-                    StatusLabel.Text = "Файл XML создан. Добавьте профиль.";
+                       ProfileListItem item = new ProfileListItem(profile, this);
+                       flowLayoutPanel1.Controls.Add(item);
                 }
             }
         }
@@ -79,12 +66,12 @@ namespace nikebot
         public void DeleteProfile(ProfileListItem item, Profile profile)
         {
             flowLayoutPanel1.Controls.Remove(item);
-            profiles.Remove(profile);
+            DataContext.profiles.Remove(profile);
             
             using (FileStream fs = new FileStream("profiles.xml", FileMode.Create))
             {
-                
-                formatter.Serialize(fs, profiles);
+
+                DataContext.formatter.Serialize(fs, DataContext.profiles);
 
                 StatusLabel.Text = $"Профиль с именем {profile.Name} удален.";
             }

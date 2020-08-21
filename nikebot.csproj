@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext.cs" />
     <Compile Include="Forms\AddingProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
