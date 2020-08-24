@@ -10,7 +10,8 @@ namespace nikebot
     public static class DataContext
     {
         public static List<Profile> profiles;
-        public static XmlSerializer formatter = new XmlSerializer(typeof(List<Profile>));
-
+        public static XmlSerializer profileFormatter = new XmlSerializer(typeof(List<Profile>));
+        public static XmlSerializer taskFormatter = new XmlSerializer(typeof(List<Task>));
+        public static List<Task> tasks;
     }
 }

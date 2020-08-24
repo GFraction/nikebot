@@ -12,11 +12,18 @@ namespace nikebot.UserControls
 {
     public partial class TaskListItem : UserControl
     {
-        public TaskListItem(string title)
+        private Task task;
+        private TasksForm form;
+        public TaskListItem(Task task, TasksForm form)
         {
             InitializeComponent();
-            label1.Text = title;
-
+            label1.Text = task.Profile.Name;
+            label2.Text = task.Profile.Surname;
+            label3.Text = task.Profile.Email;
+            label4.Text = task.Profile.Phone;
+            label5.Text = task.Size;
+            this.task = task;
+            this.form = form;
         }
 
 

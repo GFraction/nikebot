@@ -28,26 +28,62 @@ namespace nikebot
             StatusLabel.Text = "Добавление таска...";
             AddingTaskForm form = new AddingTaskForm();
             DialogResult result = form.ShowDialog(this);
-            if (result == DialogResult.Cancel) return;
-            TaskListItem item = new TaskListItem("Hekko");
+            if (result == DialogResult.Cancel)
+            {
+                StatusLabel.Text = "...";
+                return;
+            }
+            Task task = new Task()
+            {
+                Profile = DataContext.profiles.Find(profile => profile.ID == form.comboBox1.SelectedIndex),
+                Size = form.comboBox2.Text,
+                Proxy = form.proxyCheck.Checked,
+                Url = form.textBox1.Text
+            };
+            DataContext.tasks.Add(task);
+            using (FileStream fs = new FileStream("tasks.xml", FileMode.Open))
+            {
+                DataContext.taskFormatter.Serialize(fs, DataContext.tasks);
+                StatusLabel.Text = "Таск сохранен!";
+            }
+            TaskListItem item = new TaskListItem(task, this);
             TasksLayoutPanel.Controls.Add(item);
+
         }
 
         private void TasksForm_Load(object sender, EventArgs e)
         {
+            DataContext.tasks = new List<Task>();
             DataContext.profiles = new List<Profile>();
-
+            using (FileStream fs = new FileStream("tasks.xml", FileMode.OpenOrCreate))
+            {
+                try
+                {
+                    DataContext.tasks = (List<Task>)DataContext.taskFormatter.Deserialize(fs);
+                    foreach (var task in DataContext.tasks)
+                    {
+                        TaskListItem item = new TaskListItem(task, this);
+                        TasksLayoutPanel.Controls.Add(item);
+                    }
+                }
+                catch
+                {
+                    StatusLabel.Text = "...";
+                }
+                
+            }
             using (FileStream fs = new FileStream("profiles.xml", FileMode.OpenOrCreate))
             {
                 try
                 {
-                    DataContext.profiles = (List<Profile>)DataContext.formatter.Deserialize(fs);
+                    DataContext.profiles = (List<Profile>)DataContext.profileFormatter.Deserialize(fs);
                 }
                 catch
                 {
                     StatusLabel.Text = "Добавьте профили.";
                 }
             }
+            
         }
     }
 }

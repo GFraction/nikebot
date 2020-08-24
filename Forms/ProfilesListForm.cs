@@ -27,6 +27,7 @@ namespace nikebot
             }
             Profile prof = new Profile()
             {
+                ID = DataContext.profiles.Count,
                 Name = addingProfileForm.NameInput.Text,
                 Surname = addingProfileForm.SurnameInput.Text,
                 Patronymic = addingProfileForm.PatronymicInput.Text,
@@ -42,7 +43,7 @@ namespace nikebot
            
                 using (FileStream fs = new FileStream("profiles.xml", FileMode.OpenOrCreate))
                 {
-                    DataContext.formatter.Serialize(fs, DataContext.profiles);
+                    DataContext.profileFormatter.Serialize(fs, DataContext.profiles);
 
                     StatusLabel.Text = "Профиль сохранен!";
                 }
@@ -52,15 +53,11 @@ namespace nikebot
         private void ProfilesListForm_Load(object sender, EventArgs e)
 
         {
-            using (FileStream fs = new FileStream("profiles.xml", FileMode.Open))
+            foreach (var profile in DataContext.profiles)
             {
-                
-                foreach (var profile in DataContext.profiles)
-                {
-                       ProfileListItem item = new ProfileListItem(profile, this);
-                       flowLayoutPanel1.Controls.Add(item);
-                }
-            }
+                  ProfileListItem item = new ProfileListItem(profile, this);
+                  flowLayoutPanel1.Controls.Add(item);
+            }   
         }
    
         public void DeleteProfile(ProfileListItem item, Profile profile)
@@ -71,7 +68,7 @@ namespace nikebot
             using (FileStream fs = new FileStream("profiles.xml", FileMode.Create))
             {
 
-                DataContext.formatter.Serialize(fs, DataContext.profiles);
+                DataContext.profileFormatter.Serialize(fs, DataContext.profiles);
 
                 StatusLabel.Text = $"Профиль с именем {profile.Name} удален.";
             }

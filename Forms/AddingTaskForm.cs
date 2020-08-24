@@ -40,9 +40,10 @@ namespace nikebot.Forms
             
             foreach(var profile in DataContext.profiles)
             {
-                comboBox1.Items.Add(profile.Name);
+                comboBox1.Items.Add(profile.ID + " "+ profile.Name + " " + profile.Surname + " " + profile.Email);
             }
             comboBox1.SelectedIndex = 0;
+            comboBox1.SelectionLength = 0;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -57,5 +58,7 @@ namespace nikebot.Forms
                 iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Times;
             }
         }
+
+       
     }
 }

@@ -119,6 +119,7 @@
     <Compile Include="Forms\ProxyForm.Designer.cs">
       <DependentUpon>ProxyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Task.cs" />
     <Compile Include="UserControls\ProfileListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>

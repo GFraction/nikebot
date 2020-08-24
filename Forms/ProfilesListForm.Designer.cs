@@ -102,7 +102,7 @@
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(794, 23);
             this.StatusLabel.TabIndex = 3;
-            this.StatusLabel.Text = "...";
+            this.StatusLabel.Text = "v. 0.0.1";
             // 
             // profileBindingSource
             // 
