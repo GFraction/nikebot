@@ -30,16 +30,16 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.StartAllBtn = new FontAwesome.Sharp.IconButton();
             this.AddTaskBtn = new FontAwesome.Sharp.IconButton();
             this.TasksLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.flowLayoutPanel1.Controls.Add(this.iconButton1);
+            this.flowLayoutPanel1.Controls.Add(this.StartAllBtn);
             this.flowLayoutPanel1.Controls.Add(this.AddTaskBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -77,28 +77,29 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 30);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // iconButton1
+            // StartAllBtn
             // 
-            this.iconButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("HelvLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Play;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconSize = 16;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(673, 3);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(118, 25);
-            this.iconButton1.TabIndex = 0;
-            this.iconButton1.Text = "Start All";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.StartAllBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.StartAllBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.StartAllBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StartAllBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartAllBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.StartAllBtn.Font = new System.Drawing.Font("HelvLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartAllBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.StartAllBtn.IconChar = FontAwesome.Sharp.IconChar.Play;
+            this.StartAllBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.StartAllBtn.IconSize = 16;
+            this.StartAllBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StartAllBtn.Location = new System.Drawing.Point(673, 3);
+            this.StartAllBtn.Name = "StartAllBtn";
+            this.StartAllBtn.Rotation = 0D;
+            this.StartAllBtn.Size = new System.Drawing.Size(118, 25);
+            this.StartAllBtn.TabIndex = 0;
+            this.StartAllBtn.Text = "Start All";
+            this.StartAllBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.StartAllBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.StartAllBtn.UseVisualStyleBackColor = false;
+            this.StartAllBtn.Click += new System.EventHandler(this.StartAllBtn_Click);
             // 
             // AddTaskBtn
             // 
@@ -157,41 +158,17 @@
             this.panel1.Size = new System.Drawing.Size(794, 29);
             this.panel1.TabIndex = 3;
             // 
-            // label1
+            // label5
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(9, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(112, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Surname";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(237, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Email";
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label5.Location = new System.Drawing.Point(480, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 18);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Size";
             // 
             // label4
             // 
@@ -205,17 +182,41 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Phone";
             // 
-            // label5
+            // label3
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(480, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Size";
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(237, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Email";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(112, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Surname";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("HelvLight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(9, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name";
             // 
             // TasksForm
             // 
@@ -240,7 +241,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton StartAllBtn;
         private FontAwesome.Sharp.IconButton AddTaskBtn;
         private System.Windows.Forms.FlowLayoutPanel TasksLayoutPanel;
         private System.Windows.Forms.Label StatusLabel;

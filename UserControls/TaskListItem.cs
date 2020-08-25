@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace nikebot.UserControls
 {
@@ -14,6 +15,7 @@ namespace nikebot.UserControls
     {
         private Task task;
         private TasksForm form;
+        private bool active;
         public TaskListItem(Task task, TasksForm form)
         {
             InitializeComponent();
@@ -24,8 +26,27 @@ namespace nikebot.UserControls
             label5.Text = task.Size;
             this.task = task;
             this.form = form;
+            active = false;
         }
 
+        public void StartTaskBtn_Click(object sender, EventArgs e)
+        {
+            active = !active;
+            if (active)
+            {
+                StartTaskBtn.IconChar = FontAwesome.Sharp.IconChar.Pause;
+                StartTaskBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            }
+            else
+            {
+                StartTaskBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+                StartTaskBtn.IconChar = FontAwesome.Sharp.IconChar.Play;
+            }
+        }
 
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            form.DeleteTask(this, task);
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -84,6 +85,27 @@ namespace nikebot
                 }
             }
             
+        }
+        public void DeleteTask(TaskListItem item, Task task)
+        {
+            TasksLayoutPanel.Controls.Remove(item);
+            DataContext.tasks.Remove(task);
+
+            using (FileStream fs = new FileStream("tasks.xml", FileMode.Create))
+            {
+
+                DataContext.taskFormatter.Serialize(fs, DataContext.tasks);
+
+                StatusLabel.Text = $"Таск с именем {task.Profile.Name} удален.";
+            }
+        }
+
+        private void StartAllBtn_Click(object sender, EventArgs e)
+        {
+            foreach(TaskListItem item in TasksLayoutPanel.Controls)
+            {
+                item.StartTaskBtn_Click( sender, e);
+            }
         }
     }
 }
